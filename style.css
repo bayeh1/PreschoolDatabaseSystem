@@ -15,7 +15,7 @@ body{
     margin-left: auto;
     margin-right: auto;
 }
-.nav{
+.operations{
     background-image: url("congruent_pentagon.png");
     width: 30%;
     margin-left:0;
@@ -36,3 +36,28 @@ body{
     margin-right: auto;
     margin-bottom: 5%;
 }
+.navigation{
+    border-bottom: 2px solid rgba(148, 255, 190, 0.32);
+}
+.nav-tabs li{
+    width:50%;
+    font-size: 2em;
+}
+.tab-content{
+    padding:5px
+}
+.nav-tabs > li > a{
+    color: #333333;
+}
+.nav-tabs > li > a:hover{
+    background-color: rgba(148, 255, 190, 0.32) !important;
+    border: medium none;
+    cursor: pointer;
+    border-radius: 0;
+    color:#fff;
+}
+ .nav-tabs > li.active > a,
+ .nav-tabs > li.active > a:hover,
+ .nav-tabs > li.active > a:focus{
+    background-color: #8af5b8;
+ }
