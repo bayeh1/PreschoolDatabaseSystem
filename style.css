@@ -2,9 +2,17 @@ body{
     background-image: url("geometry.png");
 }
 .container{
-    margin-left:0;
+    margin:0;
     padding:0;
 
+}
+.hbar{
+    width:100%;
+    background-color: #8af5b8;
+    padding:1px;
+    margin-left:0;
+    margin-right:0;
+    margin-top:10px;
 }
 .content{
     background-image: url("congruent_pentagon.png");
@@ -15,6 +23,9 @@ body{
     margin-left: auto;
     margin-right: auto;
 }
+.tab-content{
+    padding:0;
+}
 .operations{
     background-image: url("congruent_pentagon.png");
     width: 30%;
@@ -22,6 +33,7 @@ body{
     border-right: 3px solid #94ffbe;
     height: 100%;
     float:left;
+    padding:0;
 }
 .results{
     width: 70%;
@@ -61,3 +73,22 @@ body{
  .nav-tabs > li.active > a:focus{
     background-color: #8af5b8;
  }
+
+.nav-pills li{
+    font-size: 1.5em;
+}
+.nav-pills > li > a{
+    color: #333333;
+}
+.nav-pills > li > a:hover{
+    background-color: rgba(148, 255, 190, 0.32) !important;
+    border: medium none;
+    cursor: pointer;
+    border-radius: 0;
+    color:#333333;
+}
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus{
+    background-color: #8af5b8;
+}
