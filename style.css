@@ -52,7 +52,7 @@ body{
 .navigation{
     border-bottom: 2px solid rgba(148, 255, 190, 0.32);
 }
-.nav-tabs li{
+.leftbar li{
     width:50%;
     font-size: 2em;
 }
@@ -98,4 +98,24 @@ body{
     margin-top:75px;
     margin-left:auto;
     margin-right:auto;
+}
+.collapseButton{
+    width:100%;
+    background-color: #8af5b8;
+    padding:1px;
+    margin-left:auto;
+    margin-right: auto;
+    text-align: left;
+    margin-top:10px;
+    font-size: 2em;
+    color:#333333;
+}
+.collapseButton:hover,
+.collapseButton:focus{
+    background-color: rgba(148, 255, 190, 0.32) !important;
+    border: none;
+    cursor: pointer;
+    border-radius: 0;
+    color:#333333;
+    outline:0;
 }

@@ -15,7 +15,7 @@
     <div class="operations" id="truecontent">
         <div class="navigation">
             <ul class="nav nav-tabs leftbar">
-                <li class="active"><a data-toggle="tab" href="#view">Views</a></li>
+                <li  class="active"><a data-toggle="tab" href="#view">Views</a></li>
                 <li><a data-toggle="tab" href="#ops">Admin</a></li>
             </ul>
         </div>
@@ -24,10 +24,10 @@
 
                 <div class="hbar"><h2>Add New Records</h2></div>
                 <ul class="nav nav-pills nav-stacked">
-                    <li class="active"><a href="addguardian.html">Add Guardian</a></li>
+                    <li><a href="addguardian.html">Add Guardian</a></li>
                     <li><a href="addstudent.php">Add Student</a></li>
                     <li><a href="addemployee.php">Add Employee</a></li>
-                    <li><a href="addclass.html">Add Class</a></li>
+                    <li class="active"><a href="addclass.html">Add Class</a></li>
                 </ul>
                 <div class="hbar"><h2>Update Records</h2></div>
                 <ul class="nav nav-pills nav-stacked">
@@ -52,7 +52,7 @@
                 </div>
                 <button type="button" class="btn btn-info collapseButton" data-toggle="collapse" data-target="#classes">+ Class Records</button>
                 <div id="classes" class="collapse">
-                    <ul class="nav nav-pills nav-stacked">
+                    <ul class="nav nav-pills nav-stacked fade in active">
                         <li><a href="#">Add/Drop Students to Class</a></li>
                         <li><a href="#">Update Class Record</a></li>
                         <li><a href="#">Update Guardian</a></li>
@@ -75,82 +75,77 @@
     </div>
 
     <div class="results">
-
         <div class="formcontain">
-            <form class="form-horizontal" name="addguardian" action="guardianadded.php" method="post">
+
+            <form class="form-horizontal">
                 <fieldset>
 
                     <!-- Form Name -->
-                    <legend>Enter Guardian Information</legend>
+                    <legend>New Class</legend>
 
-                    <!-- Text input-->
+                    <!-- Select Basic -->
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="firstname">First Name</label>
+                        <label class="col-md-4 control-label" for="age">Age Group</label>
                         <div class="col-md-4">
-                            <input id="firstname" name="firstname" type="text" placeholder="" class="form-control input-md" required="">
-
+                            <select id="age" name="age" class="form-control">
+                                <option value="2">Two yr olds</option>
+                                <option value="3">Three yr olds</option>
+                                <option value="4">Four yr olds</option>
+                            </select>
                         </div>
                     </div>
 
-                    <!-- Text input-->
+                    <!-- Select Basic -->
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="lastname">Last Name</label>
+                        <label class="col-md-4 control-label" for="sessiontime">Time</label>
                         <div class="col-md-4">
-                            <input id="lastname" name="lastname" type="text" placeholder="" class="form-control input-md" required="">
-
+                            <select id="sessiontime" name="sessiontime" class="form-control">
+                                <option value="1">Session 1</option>
+                                <option value="2">Session 2</option>
+                                <option value="3">Session 3</option>
+                            </select>
                         </div>
                     </div>
 
                     <!-- Text input-->
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="phone">Phone Number</label>
+                        <label class="col-md-4 control-label" for="capacity">Class Capacity</label>
+                        <div class="col-md-2">
+                            <input id="capacity" name="capacity" type="text" placeholder="" class="form-control input-md" required="">
+
+                        </div>
+                    </div>
+
+                    <!-- Select Basic -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="teacher">Assigned Teacher</label>
                         <div class="col-md-4">
-                            <input id="phone" name="phone" type="text" placeholder="" class="form-control input-md" required="">
-
+                            <select id="teacher" name="teacher" class="form-control">
+                                <option value="1">Option one</option>
+                                <option value="2">Option two</option>
+                            </select>
                         </div>
                     </div>
-                    <!-- Text input-->
+
+                    <!-- Select Basic -->
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="street">Address</label>
+                        <label class="col-md-4 control-label" for="aid">Class Aid</label>
                         <div class="col-md-4">
-                            <input id="street" name="street" type="text" placeholder="Street" class="form-control input-md" required="">
-
+                            <select id="aid" name="aid" class="form-control">
+                                <option value="1">Option one</option>
+                                <option value="2">Option two</option>
+                            </select>
                         </div>
                     </div>
 
-                    <!-- Text input-->
+                    <!-- Select Basic -->
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="city"></label>
-                        <div class="col-md-2">
-                            <input id="city" name="city" type="text" placeholder="City" class="form-control input-md" required="">
-
-                        </div>
-                    </div>
-
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="state"></label>
-                        <div class="col-md-2">
-                            <input id="state" name="state" type="text" placeholder="MD" class="form-control input-md" required="">
-
-                        </div>
-                    </div>
-
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="postalcode"></label>
-                        <div class="col-md-2">
-                            <input id="postalcode" name="postalcode" type="text" placeholder="Postal Code" class="form-control input-md" required="">
-
-                        </div>
-                    </div>
-
-                    <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="ssn">SSN</label>
-                        <div class="col-md-2">
-                            <input id="ssn" name="ssn" type="text" placeholder="" class="form-control input-md" required="">
-
+                        <label class="col-md-4 control-label" for="selectbasic">Select Basic</label>
+                        <div class="col-md-4">
+                            <select id="selectbasic" name="selectbasic" class="form-control">
+                                <option value="1">Option one</option>
+                                <option value="2">Option two</option>
+                            </select>
                         </div>
                     </div>
 
@@ -165,10 +160,7 @@
                 </fieldset>
             </form>
 
-
-
         </div>
-
 
     </div>
 </div>

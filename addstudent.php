@@ -14,7 +14,7 @@
 <div class="container" id="wrapper">
     <div class="operations" id="truecontent">
         <div class="navigation">
-            <ul class="nav nav-tabs">
+            <ul class="nav nav-tabs leftbar">
                 <li class="active"><a data-toggle="tab" href="#view">Views</a></li>
                 <li><a data-toggle="tab" href="#ops">Admin</a></li>
             </ul>
@@ -26,8 +26,8 @@
                 <ul class="nav nav-pills nav-stacked">
                     <li><a href="addguardian.html">Add Guardian</a></li>
                     <li class="active"><a href="addstudent.php">Add Student</a></li>
-                    <li><a href="#">Add Employee</a></li>
-                    <li><a href="#">Add Class</a></li>
+                    <li><a href="addemployee.php">Add Employee</a></li>
+                    <li><a href="addclass.html">Add Class</a></li>
                 </ul>
                 <div class="hbar"><h2>Update Records</h2></div>
                 <ul class="nav nav-pills nav-stacked">
@@ -40,7 +40,36 @@
 
             </div>
             <div id="view" class="tab-pane fade">
-                <h2>View</h2>
+                <button type="button" class="btn btn-info collapseButton" data-toggle="collapse" data-target="#students">+ Student Records</button>
+                <div id="students" class="collapse">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><a href="#">Add/Drop Students to Class</a></li>
+                        <li><a href="#">Update Class Record</a></li>
+                        <li><a href="#">Update Guardian</a></li>
+                        <li><a href="#">Update Student</a></li>
+                        <li><a href="#">Update Employee</a></li>
+                    </ul>
+                </div>
+                <button type="button" class="btn btn-info collapseButton" data-toggle="collapse" data-target="#classes">+ Class Records</button>
+                <div id="classes" class="collapse">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><a href="#">Add/Drop Students to Class</a></li>
+                        <li><a href="#">Update Class Record</a></li>
+                        <li><a href="#">Update Guardian</a></li>
+                        <li><a href="#">Update Student</a></li>
+                        <li><a href="#">Update Employee</a></li>
+                    </ul>
+                </div>
+                <button type="button" class="btn btn-info collapseButton" data-toggle="collapse" data-target="#employee">+ Employee Records</button>
+                <div id="employee" class="collapse">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><a href="#">Add/Drop Students to Class</a></li>
+                        <li><a href="#">Update Class Record</a></li>
+                        <li><a href="#">Update Guardian</a></li>
+                        <li><a href="#">Update Student</a></li>
+                        <li><a href="#">Update Employee</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -48,7 +77,7 @@
     <div class="results">
 
         <div class="formcontain">
-            <form class="form-horizontal">
+            <form class="form-horizontal" action="studentadded.php" method="post">
             <fieldset>
 
             <!-- Form Name -->
@@ -77,6 +106,22 @@
               <label class="col-md-4 control-label" for="guardian">Parent/Guardian</label>
               <div class="col-md-4">
                 <select id="guardian" name="guardian" class="form-control">
+                    <?php
+                    include 'db.inc.php';
+                    // Connect to MySQL DBMS
+                    if (!($connection = @ mysql_connect($hostName, $username,
+                        $password)))
+                        showerror();
+                    // Use the roasters database
+                    if (!mysql_select_db($databaseName, $connection))
+                        showerror();
+
+                    $query = "SELECT parentSSN, fname, lname FROM parent";
+                    if (!($result = @ mysql_query ($query, $connection)))
+                        showerror();
+                    while ($row = @ mysql_fetch_array($result))
+                        echo "<option value='{$row["parentSSN"]}'> {$row["fname"]} {$row["lname"]}</option>";
+                    ?>
                 </select>
               </div>
             </div>
